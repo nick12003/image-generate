@@ -2,6 +2,7 @@
 
 使用Open AI 產生圖片
 
+![image](https://raw.githubusercontent.com/nick12003/image-generate/main/intro.png)
 
 # 使用
 
