@@ -40,6 +40,6 @@ or
 pnpm run dev
 ```
 
-打開 `http://localhost:5000` 
+打開 `http://localhost:5173` 
 
 本地生成圖片api `POST http://localhost:5000/openai/generateimage`
