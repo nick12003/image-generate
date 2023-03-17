@@ -13,7 +13,9 @@ function App() {
 
   const Generate = async () => {
     setLoading(true);
-    const response = await fetch("http://localhost:5000/openai/generateimage", {
+
+    const ApiUrl = import.meta.env.VITE_API_URL ?? "http://localhost:5000/openai/generateimage";
+    const response = await fetch(ApiUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +26,6 @@ function App() {
         count,
       }),
     });
-
     const data = await response.json();
     if (!data.success) {
       setError(data.error);
@@ -87,8 +88,8 @@ function App() {
       </section>
       <section className='image'>
         <h2 className='error-msg'>{error}</h2>
-        {imgUrls.map((url) => (
-          <div className='image-container'>
+        {imgUrls.map((url, i) => (
+          <div key={i} className='image-container'>
             <img width={imgWidth} src={url} alt='image' />
           </div>
         ))}
